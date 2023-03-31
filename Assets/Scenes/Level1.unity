@@ -17631,6 +17631,55 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
+--- !u!1 &502760013
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 502760015}
+  - component: {fileID: 502760014}
+  m_Layer: 0
+  m_Name: EnemySpawnerManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &502760014
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 502760013}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 857d2f958c5094731b1e2bbf454a8f1b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemyPrefab: {fileID: 6953818320750418485, guid: e2ef3147db67348b1a0002411c5b77e3, type: 3}
+  gridWidth: 1
+  gridHeight: 1
+  cellSize: 1
+  gridOrigin: {x: 0, y: 0}
+--- !u!4 &502760015
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 502760013}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.5548863, y: 0.47943598, z: -0.05301451}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 8
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -20313,11 +20362,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6966856217529275639, guid: e2ef3147db67348b1a0002411c5b77e3, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 1.558
+      value: 1.56
       objectReference: {fileID: 0}
     - target: {fileID: 6966856217529275639, guid: e2ef3147db67348b1a0002411c5b77e3, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.472
+      value: -0.05
       objectReference: {fileID: 0}
     - target: {fileID: 6966856217529275639, guid: e2ef3147db67348b1a0002411c5b77e3, type: 3}
       propertyPath: m_LocalPosition.z
@@ -20351,5 +20400,9 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 9102555879405794880, guid: e2ef3147db67348b1a0002411c5b77e3, type: 3}
+      propertyPath: sceneTransition
+      value: 
+      objectReference: {fileID: 1839302742}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e2ef3147db67348b1a0002411c5b77e3, type: 3}
