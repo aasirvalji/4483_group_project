@@ -7,6 +7,7 @@ public class Enemy : MonoBehaviour
 {
     Animator animator;
     public static int numberOfEnemies;
+    [SerializeField] private SceneTransition sceneTransition;
     public float Health
     {
         set
@@ -45,7 +46,7 @@ public class Enemy : MonoBehaviour
         if (numberOfEnemies == 0)
         {
             Debug.Log("All enemies destroyed!");
-            SceneManager.LoadScene("Level2");
+            sceneTransition.FadeToLevel("Level2");
         }
     }
 }
