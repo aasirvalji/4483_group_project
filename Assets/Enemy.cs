@@ -8,6 +8,7 @@ public class Enemy : MonoBehaviour
     Animator animator;
     public static int numberOfEnemies;
     [SerializeField] private SceneTransition sceneTransition;
+    [SerializeField] private string nextScene;
     public float Health
     {
         set
@@ -29,7 +30,7 @@ public class Enemy : MonoBehaviour
 
     private void Start()
     {
-        numberOfEnemies = 1;
+        numberOfEnemies = GameObject.FindGameObjectWithTag("EnemySpawnerManager").GetComponent<LevelEnemies>().levelEnemyCount + 1; 
         animator = GetComponent<Animator>();
     }
 
@@ -46,7 +47,7 @@ public class Enemy : MonoBehaviour
         if (numberOfEnemies == 0)
         {
             Debug.Log("All enemies destroyed!");
-            sceneTransition.FadeToLevel("Level2");
+            sceneTransition.FadeToLevel(nextScene);
         }
     }
 }

@@ -11,13 +11,17 @@ public class SlimeSpawner : MonoBehaviour
 
     private void Start()
     {
-        SpawnEnemyAtRandomPosition();
+        int enemiesToSpawn = GameObject.FindGameObjectWithTag("EnemySpawnerManager").GetComponent<LevelEnemies>().levelEnemyCount;
+        for (int enemy = 1; enemy <= enemiesToSpawn; enemy++)
+        {
+            SpawnEnemyAtRandomPosition();
+        }
     }
 
     private void SpawnEnemyAtRandomPosition()
     {
-        int randomX = Random.Range(0, gridWidth);
-        int randomY = Random.Range(0, gridHeight);
+        int randomX = Random.Range(-1 * gridWidth, gridWidth);
+        int randomY = Random.Range(-1 * gridHeight, gridHeight);
 
         Vector2 spawnPosition = gridOrigin + new Vector2(randomX * cellSize, randomY * cellSize);
         Instantiate(enemyPrefab, spawnPosition, Quaternion.identity);
