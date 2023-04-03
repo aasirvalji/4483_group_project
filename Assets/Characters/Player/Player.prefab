@@ -220,8 +220,10 @@ MonoBehaviour:
     minNormalAngle: 0
     maxNormalAngle: 0
   swordAttack: {fileID: 3566581335977751615}
-  collisionOffset: 0.05
+  kunai: {fileID: 1961819450352144819, guid: 1b39739ec5c5e48018b8766036b9a2e5, type: 3}
+  collisionOffset: 0.02
   movementSpeed: 0.9
+  attackMode: 0
 --- !u!50 &7882631015863208165
 Rigidbody2D:
   serializedVersion: 4
