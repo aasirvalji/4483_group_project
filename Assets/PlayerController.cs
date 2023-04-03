@@ -19,7 +19,7 @@ public class PlayerController : MonoBehaviour
     public float movementSpeed = 0.9f;
     [SerializeField]
     private int attackMode = 0;
-
+    private Vector2 dir;
     void Start()
     {
         spriteRenderer = GetComponent<SpriteRenderer>();
@@ -92,6 +92,7 @@ public class PlayerController : MonoBehaviour
     {
         if (direction != Vector2.zero)
         {
+            dir = direction;
             int count = rb.Cast(
                 direction, 
                 movementFilter,
@@ -131,10 +132,10 @@ public class PlayerController : MonoBehaviour
         animator.SetTrigger("swordAttack");
         }
         if(attackMode == 1){
-        GameObject ammo = Instantiate(kunai,swordAttack.transform.position, transform.rotation);
+        GameObject ammo = Instantiate(kunai,swordAttack.transform.position, Quaternion.AngleAxis(Vector2.Angle(transform.forward, dir), Vector3.forward));
         Destroy(ammo, 3);
         Rigidbody2D ammoRigidbody = ammo.GetComponent<Rigidbody2D>();
-        ammoRigidbody.AddForce(transform.forward * 10f);
+        ammoRigidbody.AddForce(dir * 200f);
         }
         if(attackMode == 2){
         animator.SetTrigger("swordAttack");
