@@ -57,6 +57,7 @@ public class Enemy : MonoBehaviour
         if (numberOfEnemies == 0 && waveNum == 3)
         {
             Debug.Log("All enemies destroyed!");
+            waveNum = 1;
             sceneTransition.FadeToLevel(nextScene);
         } else if (numberOfEnemies == 0)
         {
