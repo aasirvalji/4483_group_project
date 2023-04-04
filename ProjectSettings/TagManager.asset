@@ -5,8 +5,9 @@ TagManager:
   serializedVersion: 2
   tags:
   - Enemy
-  - EnemySpawnerManager
   - Obstacle
+  - Sword
+  - EnemySpawnerManager
   layers:
   - Default
   - TransparentFX

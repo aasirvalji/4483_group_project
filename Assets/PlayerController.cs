@@ -2,14 +2,23 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.SceneManagement;
 
 public class PlayerController : MonoBehaviour
 {
+
+    public float BombcooldownTime = 1.5f;
+    private float BomblastTimeFired = -Mathf.Infinity;
+    public float RangecooldownTime = 0.5f;
+    private float RangelastTimeFired = -Mathf.Infinity;
+
     public ContactFilter2D movementFilter;
     SpriteRenderer spriteRenderer;
     public SwordAttack swordAttack;
     [SerializeField]
-    private GameObject kunai;
+    private GameObject fireball;
+    [SerializeField]
+    private GameObject bomb;
     Vector2 movementInput;
     List<RaycastHit2D> castCollisions = new List<RaycastHit2D>();
     Rigidbody2D rb;
@@ -57,15 +66,21 @@ public class PlayerController : MonoBehaviour
                 spriteRenderer.flipX = false  ;
             }
         }
-    }
-    void OnSelectRanged(){
-        attackMode = 1;
-    }
+    }  
     void OnSelectMelee(){
         attackMode = 0;
     }
+    void OnSelectRanged(){
+        if(SceneManager.GetActiveScene().buildIndex > 2)
+        {
+        attackMode = 1;
+        }
+    }
     void OnSelectBomb(){
+        if(SceneManager.GetActiveScene().buildIndex > 3)
+        {
         attackMode = 2;
+        }
     }
 
     public void PlayerSwordAttack()
@@ -129,16 +144,25 @@ public class PlayerController : MonoBehaviour
     void OnFire()
     {
         if(attackMode == 0){
-        animator.SetTrigger("swordAttack");
+            animator.SetTrigger("swordAttack");
         }
         if(attackMode == 1){
-        GameObject ammo = Instantiate(kunai,swordAttack.transform.position, Quaternion.AngleAxis(Vector2.Angle(transform.forward, dir), Vector3.forward));
-        Destroy(ammo, 3);
-        Rigidbody2D ammoRigidbody = ammo.GetComponent<Rigidbody2D>();
-        ammoRigidbody.AddForce(dir * 200f);
+            if (Time.time - RangelastTimeFired > RangecooldownTime)
+            {
+                GameObject ammo = Instantiate(fireball,swordAttack.transform.position, Quaternion.AngleAxis(Vector2.Angle(transform.forward, dir), Vector3.forward));
+                Destroy(ammo, 3);
+                Rigidbody2D ammoRigidbody = ammo.GetComponent<Rigidbody2D>();
+                ammoRigidbody.AddForce(dir * 200f);
+                RangelastTimeFired = Time.time;
+            }
+            
         }
         if(attackMode == 2){
-        animator.SetTrigger("swordAttack");
+            if (Time.time - BomblastTimeFired > BombcooldownTime)
+            {
+                Instantiate(bomb,swordAttack.transform.position, Quaternion.identity);
+                BomblastTimeFired = Time.time;
+            }
         }
     }
 
