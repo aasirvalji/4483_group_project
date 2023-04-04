@@ -32,7 +32,6 @@ public class SwordAttack : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        print(other);
         if (other.tag == "Enemy")
         {
             Enemy enemy = other.GetComponent<Enemy>();
