@@ -30547,6 +30547,14 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 1369683389557285481, guid: 54ae342664a1a42ccb674075fb9480d6, type: 3}
+      propertyPath: bolt
+      value: 
+      objectReference: {fileID: 6194776262242319704, guid: 6dbe3dc61711248f78c6e2bdba573acd, type: 3}
+    - target: {fileID: 1369683389557285481, guid: 54ae342664a1a42ccb674075fb9480d6, type: 3}
+      propertyPath: speed
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 1369683389557285481, guid: 54ae342664a1a42ccb674075fb9480d6, type: 3}
       propertyPath: target
       value: 
       objectReference: {fileID: 1754990190}
