@@ -29,14 +29,14 @@ public class BossAI : MonoBehaviour
         seeker = GetComponent<Seeker>();
         rb = GetComponent<Rigidbody2D>();
         InvokeRepeating("UpdatePath",0f,0.2f); 
-        InvokeRepeating("LayEgg",2f,5f); 
-        InvokeRepeating("ShootPlayer",2f, 3f); 
+        InvokeRepeating("LayEgg",2f,6f); 
+        InvokeRepeating("ShootPlayer",2f, 6f); 
 
 
     }
     void ShootPlayer(){
         float distance = Vector2.Distance(rb.position, target.position);
-        if(distance < 1f && distance > 0.5f){
+        if(distance < 1f){
             for(int i = 0 ;i<3; i++){
                 GameObject ammo = Instantiate(bolt, pof.position, Quaternion.AngleAxis(Vector2.Angle(transform.forward, dir), Vector3.forward));
                 Destroy(ammo, 3);
@@ -47,7 +47,7 @@ public class BossAI : MonoBehaviour
     }
     void LayEgg(){
         float distance = Vector2.Distance(rb.position, target.position);
-        if(distance >= 1f){
+        if(distance >= 0.5f){
             Instantiate(egg, rb.position, Quaternion.identity);
         }
     }
@@ -66,8 +66,8 @@ public class BossAI : MonoBehaviour
     {
         float curSpeed = speed;
         float distance = Vector2.Distance(rb.position, path.vectorPath[currentWaypoint]);
-        if(distance < 0.5f && distance > 0.01f){
-            curSpeed = initSpeed *3;
+        if(distance < 0.3f && distance > 0.01f){
+            curSpeed = initSpeed *10;
         } else{
             curSpeed = initSpeed;
         }

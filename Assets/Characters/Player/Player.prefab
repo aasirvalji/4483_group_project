@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 3566581335977751615}
   m_Layer: 0
   m_Name: SwordHitbox
-  m_TagString: Untagged
+  m_TagString: Sword
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -220,7 +220,8 @@ MonoBehaviour:
     minNormalAngle: 0
     maxNormalAngle: 0
   swordAttack: {fileID: 3566581335977751615}
-  kunai: {fileID: 1961819450352144819, guid: 1b39739ec5c5e48018b8766036b9a2e5, type: 3}
+  fireball: {fileID: 1961819450352144819, guid: 1b39739ec5c5e48018b8766036b9a2e5, type: 3}
+  bomb: {fileID: 861392865988125535, guid: 767c0b0fa4f234e1caeb549443f39043, type: 3}
   collisionOffset: 0.02
   movementSpeed: 0.9
   attackMode: 0

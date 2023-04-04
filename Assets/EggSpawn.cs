@@ -11,7 +11,7 @@ public class EggSpawn : MonoBehaviour
     void Awake()
     {
         col = GetComponent<Collider2D>();
-        Destroy(this.gameObject,3);
+        Destroy(this.gameObject,4);
     }
     private void OnDestroy() {
         if(hit==false){
@@ -19,8 +19,12 @@ public class EggSpawn : MonoBehaviour
             }
     }
     // Update is called once per frame
-    void Update()
+    private void OnTriggerEnter2D(Collider2D other)
     {
-        
+        if (other.tag == "Sword")
+        {
+            hit = true;
+            Destroy(this.gameObject);
+        }
     }
 }

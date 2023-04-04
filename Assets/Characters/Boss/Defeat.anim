@@ -37,6 +37,24 @@ AnimationClip:
       value: {fileID: -849907839, guid: 76e0b8db786af418a9f405c9509b7102, type: 3}
     - time: 0.25
       value: {fileID: -849907839, guid: 76e0b8db786af418a9f405c9509b7102, type: 3}
+    - time: 0.3
+      value: {fileID: 1489020866, guid: 76e0b8db786af418a9f405c9509b7102, type: 3}
+    - time: 0.33333334
+      value: {fileID: -1310631355, guid: 76e0b8db786af418a9f405c9509b7102, type: 3}
+    - time: 0.36666667
+      value: {fileID: -1164815351, guid: 76e0b8db786af418a9f405c9509b7102, type: 3}
+    - time: 0.4
+      value: {fileID: -849907839, guid: 76e0b8db786af418a9f405c9509b7102, type: 3}
+    - time: 0.41666666
+      value: {fileID: 1489020866, guid: 76e0b8db786af418a9f405c9509b7102, type: 3}
+    - time: 0.45
+      value: {fileID: -1310631355, guid: 76e0b8db786af418a9f405c9509b7102, type: 3}
+    - time: 0.48333332
+      value: {fileID: -1164815351, guid: 76e0b8db786af418a9f405c9509b7102, type: 3}
+    - time: 0.55
+      value: {fileID: -849907839, guid: 76e0b8db786af418a9f405c9509b7102, type: 3}
+    - time: 0.6166667
+      value: {fileID: -849907839, guid: 76e0b8db786af418a9f405c9509b7102, type: 3}
     attribute: m_Sprite
     path: 
     classID: 212
@@ -65,12 +83,21 @@ AnimationClip:
     - {fileID: -1164815351, guid: 76e0b8db786af418a9f405c9509b7102, type: 3}
     - {fileID: -849907839, guid: 76e0b8db786af418a9f405c9509b7102, type: 3}
     - {fileID: -849907839, guid: 76e0b8db786af418a9f405c9509b7102, type: 3}
+    - {fileID: 1489020866, guid: 76e0b8db786af418a9f405c9509b7102, type: 3}
+    - {fileID: -1310631355, guid: 76e0b8db786af418a9f405c9509b7102, type: 3}
+    - {fileID: -1164815351, guid: 76e0b8db786af418a9f405c9509b7102, type: 3}
+    - {fileID: -849907839, guid: 76e0b8db786af418a9f405c9509b7102, type: 3}
+    - {fileID: 1489020866, guid: 76e0b8db786af418a9f405c9509b7102, type: 3}
+    - {fileID: -1310631355, guid: 76e0b8db786af418a9f405c9509b7102, type: 3}
+    - {fileID: -1164815351, guid: 76e0b8db786af418a9f405c9509b7102, type: 3}
+    - {fileID: -849907839, guid: 76e0b8db786af418a9f405c9509b7102, type: 3}
+    - {fileID: -849907839, guid: 76e0b8db786af418a9f405c9509b7102, type: 3}
   m_AnimationClipSettings:
     serializedVersion: 2
     m_AdditiveReferencePoseClip: {fileID: 0}
     m_AdditiveReferencePoseTime: 0
     m_StartTime: 0
-    m_StopTime: 0.26666668
+    m_StopTime: 0.6333333
     m_OrientationOffsetY: 0
     m_Level: 0
     m_CycleOffset: 0
@@ -90,7 +117,7 @@ AnimationClip:
   m_HasGenericRootTransform: 0
   m_HasMotionFloatCurves: 0
   m_Events:
-  - time: 0.25
+  - time: 0.6166667
     functionName: RemoveEnemy
     data: 
     objectReferenceParameter: {fileID: 0}
