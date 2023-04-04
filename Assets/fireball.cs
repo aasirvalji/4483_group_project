@@ -11,15 +11,19 @@ public class fireball : MonoBehaviour
 
         if (other.tag == "Enemy")
         {
-            Enemy enemy = other.GetComponent<Enemy>();
-
+             Enemy enemy = other.GetComponent<Enemy>();
+            BossEnemy boss = other.GetComponent<BossEnemy>();
             if (enemy)
             {
                 enemy.Health -= damage;
                
             }
+            if (boss)
+            {
+                boss.Health -= damage;
+               
+            }
             Destroy(gameObject);
-
         }
     }
 }

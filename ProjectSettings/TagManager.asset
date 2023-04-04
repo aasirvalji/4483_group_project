@@ -8,6 +8,8 @@ TagManager:
   - Obstacle
   - Sword
   - EnemySpawnerManager
+  - Bomb
+  - Ranged
   layers:
   - Default
   - TransparentFX
