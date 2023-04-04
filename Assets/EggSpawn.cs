@@ -6,11 +6,12 @@ public class EggSpawn : MonoBehaviour
 {
     public GameObject slime;
     bool hit = false;
+    Collider2D  col;
     // Start is called before the first frame update
     void Awake()
     {
+        col = GetComponent<Collider2D>();
         Destroy(this.gameObject,3);
-        
     }
     private void OnDestroy() {
         if(hit==false){

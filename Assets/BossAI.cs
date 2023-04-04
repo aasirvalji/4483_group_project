@@ -8,7 +8,9 @@ public class BossAI : MonoBehaviour
     public Transform target;
     public float speed = 3f;
     public float nextWayPointDistance = 1f;
-
+    public SpriteRenderer sr;
+    public GameObject egg;
+    public Animator ac;
     Path path;    
     int currentWaypoint = 0;
     bool reachedEOP = false;
@@ -18,9 +20,19 @@ public class BossAI : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        ac = GetComponent<Animator>();
+        sr = GetComponent<SpriteRenderer>();
         seeker = GetComponent<Seeker>();
         rb = GetComponent<Rigidbody2D>();
-        InvokeRepeating("UpdatePath",0f,0.6f); 
+        InvokeRepeating("UpdatePath",0f,0.2f); 
+        InvokeRepeating("LayEgg",0f,5f); 
+
+    }
+    void LayEgg(){
+        float distance = Vector2.Distance(rb.position, target.position);
+        if(distance >= 1f){
+            Instantiate(egg, rb.position, Quaternion.identity);
+        }
     }
     void UpdatePath(){
         if(seeker.IsDone())
@@ -33,7 +45,7 @@ public class BossAI : MonoBehaviour
         }
     }
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
         if(path == null){
             return;
@@ -45,16 +57,26 @@ public class BossAI : MonoBehaviour
             reachedEOP = false;
         }
         Vector2 direction = ((Vector2)path.vectorPath[currentWaypoint]- rb.position).normalized;
-        print(direction);
         Vector2 force = direction * speed * Time.deltaTime;
+        if(force.magnitude > 0){
+            ac.SetBool("move", true);
+        } else {
+            ac.SetBool("move", true);
+        }
         float distance = Vector2.Distance(rb.position, path.vectorPath[currentWaypoint]);
         rb.AddForce(force);
         if(distance < nextWayPointDistance){
             currentWaypoint++;
         }
-        if(distance > 1f && distance < 1.001f){
-
-        }
+          if (direction.x < 0)
+            {
+                sr.flipX = true;
+            }
+            else if (direction.x > 0)
+            {
+                sr.flipX = false  ;
+            }
+       
     }
 
 
