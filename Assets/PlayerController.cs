@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.SceneManagement;
 
 public class PlayerController : MonoBehaviour
 {
@@ -65,15 +66,21 @@ public class PlayerController : MonoBehaviour
                 spriteRenderer.flipX = false  ;
             }
         }
-    }
-    void OnSelectRanged(){
-        attackMode = 1;
-    }
+    }  
     void OnSelectMelee(){
         attackMode = 0;
     }
+    void OnSelectRanged(){
+        if(SceneManager.GetActiveScene().buildIndex > 2)
+        {
+        attackMode = 1;
+        }
+    }
     void OnSelectBomb(){
+        if(SceneManager.GetActiveScene().buildIndex > 3)
+        {
         attackMode = 2;
+        }
     }
 
     public void PlayerSwordAttack()
