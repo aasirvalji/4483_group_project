@@ -98,7 +98,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 809c6e14449704759beeb4fe793ac444, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  slime: {fileID: 6953818320750418485, guid: e2ef3147db67348b1a0002411c5b77e3, type: 3}
+  slime: {fileID: 6953818320750418485, guid: ae7f10e79d6064a22b94efd77da26c0f, type: 3}
 --- !u!70 &3297624786898927118
 CapsuleCollider2D:
   m_ObjectHideFlags: 0

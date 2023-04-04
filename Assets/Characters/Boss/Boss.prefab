@@ -43,10 +43,10 @@ GameObject:
   - component: {fileID: 3552908212535840879}
   - component: {fileID: 1369683389557285481}
   - component: {fileID: 5580464193795180421}
-  - component: {fileID: 6682164884160874871}
   - component: {fileID: 6399475685175795683}
   - component: {fileID: 4262291784151944684}
   - component: {fileID: 1881491474586544913}
+  - component: {fileID: 8054952282165332059}
   m_Layer: 0
   m_Name: Boss
   m_TagString: Enemy
@@ -113,11 +113,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pof: {fileID: 5248635878761374978}
   target: {fileID: 0}
-  speed: 20
+  speed: 30
   nextWayPointDistance: 1
   sr: {fileID: 0}
   egg: {fileID: 5986733406449705586, guid: dbee26b5c926f413da613c39709673e9, type: 3}
-  ac: {fileID: 0}
+  bolt: {fileID: 6194776262242319704, guid: 6dbe3dc61711248f78c6e2bdba573acd, type: 3}
+  ac: {fileID: 4262291784151944684}
 --- !u!50 &5580464193795180421
 Rigidbody2D:
   serializedVersion: 4
@@ -139,20 +140,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
---- !u!114 &6682164884160874871
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4944024344746316890}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5691fed48dca640b79b01a99cde6a7e3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  sceneTransition: {fileID: 0}
-  health: 8
 --- !u!70 &6399475685175795683
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -242,6 +229,20 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &8054952282165332059
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4944024344746316890}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3ccb025b808344d83a574843ec653845, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nextScene: VictoryScene
+  health: 14
 --- !u!1 &7940142368125769202
 GameObject:
   m_ObjectHideFlags: 0

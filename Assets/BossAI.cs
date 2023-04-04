@@ -64,15 +64,23 @@ public class BossAI : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-        float curSpeed = speed;
+        if(path == null){
+            return;
+        }
+        if(currentWaypoint >= path.vectorPath.Count){
+            reachedEOP = true;
+            return;
+        } else {
+            reachedEOP = false;
+        }
+        float curSpeed = speed;    
+        Vector2 direction = ((Vector2)path.vectorPath[currentWaypoint]- rb.position).normalized;
         float distance = Vector2.Distance(rb.position, path.vectorPath[currentWaypoint]);
         if(distance < 0.3f && distance > 0.01f){
             curSpeed = initSpeed *10;
         } else{
             curSpeed = initSpeed;
         }
-        
-        Vector2 direction = ((Vector2)path.vectorPath[currentWaypoint]- rb.position).normalized;
         dir = direction;
         Vector2 force = direction * curSpeed * Time.deltaTime;
         if(force.magnitude > 0){
@@ -84,22 +92,13 @@ public class BossAI : MonoBehaviour
         if(distance < nextWayPointDistance){
             currentWaypoint++;
         }
-          if (force.x < 0)
-            {
-                sr.flipX = true;
-            }
-            else if (force.x > 0)
-            {
-                sr.flipX = false  ;
-            }
-       if(path == null){
-            return;
+        if (force.x < 0)
+        {
+            sr.flipX = true;
         }
-        if(currentWaypoint >= path.vectorPath.Count){
-            reachedEOP = true;
-            return;
-        } else {
-            reachedEOP = false;
+        else if (force.x > 0)
+        {
+            sr.flipX = false  ;
         }
       
     }

@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
+using System.IO;
+using System;
 
 public class PlayerController : MonoBehaviour
 {
@@ -11,7 +13,7 @@ public class PlayerController : MonoBehaviour
     private float BomblastTimeFired = -Mathf.Infinity;
     public float RangecooldownTime = 0.5f;
     private float RangelastTimeFired = -Mathf.Infinity;
-
+    string startPath = "Assets/startTime.txt";
     public ContactFilter2D movementFilter;
     SpriteRenderer spriteRenderer;
     public SwordAttack swordAttack;
@@ -31,6 +33,13 @@ public class PlayerController : MonoBehaviour
     private Vector2 dir;
     void Start()
     {
+        if(SceneManager.GetActiveScene().name == "Level1"){
+            using (StreamWriter writer = new StreamWriter(startPath))
+                {
+                    writer.WriteLine((int) (DateTime.Now.TimeOfDay.TotalMilliseconds));
+                }
+        }
+        Time.timeScale = 1f;
         spriteRenderer = GetComponent<SpriteRenderer>();
         animator = GetComponent<Animator>();
         rb = GetComponent<Rigidbody2D>();

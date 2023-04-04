@@ -205,6 +205,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 19c87e1a3a8c4494e80da76eff68712a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  BombcooldownTime: 1
+  RangecooldownTime: 1
   movementFilter:
     useTriggers: 0
     useLayerMask: 0

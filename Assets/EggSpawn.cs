@@ -21,7 +21,7 @@ public class EggSpawn : MonoBehaviour
     // Update is called once per frame
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.tag == "Sword")
+        if (other.tag == "Sword" || other.tag == "Ranged" || other.tag == "Bomb")
         {
             hit = true;
             Destroy(this.gameObject);

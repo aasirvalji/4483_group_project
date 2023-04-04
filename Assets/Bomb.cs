@@ -21,11 +21,16 @@ public class Bomb : MonoBehaviour
         if (other.tag == "Enemy" && exploded && !damageDealt)
         {
             Enemy enemy = other.GetComponent<Enemy>();
-
+            BossEnemy boss = other.GetComponent<BossEnemy>();
             if (enemy)
             {
                 enemy.Health -= damage;
-                damageDealt = true;
+               
+            }
+            if (boss)
+            {
+                boss.Health -= damage;
+               
             }
         }
     }

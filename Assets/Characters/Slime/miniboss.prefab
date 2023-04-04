@@ -12,11 +12,11 @@ GameObject:
   - component: {fileID: 4075067483885569631}
   - component: {fileID: 7869081110007617960}
   - component: {fileID: 2194096494498439102}
-  - component: {fileID: 9102555879405794880}
   - component: {fileID: 4091311737276039346}
   - component: {fileID: 8552446937944806856}
+  - component: {fileID: -6334228527512440042}
   m_Layer: 0
-  m_Name: Slime
+  m_Name: miniboss
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -126,20 +126,6 @@ CapsuleCollider2D:
   m_Offset: {x: 0, y: -0.02}
   m_Size: {x: 0.16, y: 0.16}
   m_Direction: 0
---- !u!114 &9102555879405794880
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6953818320750418485}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5691fed48dca640b79b01a99cde6a7e3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  nextScene: 
-  health: 1
 --- !u!95 &4091311737276039346
 Animator:
   serializedVersion: 5
@@ -173,3 +159,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 923e53c9802354d76a3b5d9b5f9d4a86, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &-6334228527512440042
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6953818320750418485}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3ccb025b808344d83a574843ec653845, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nextScene: 
+  health: 1
