@@ -24287,7 +24287,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 35}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1019326244
@@ -26813,6 +26813,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 350298720799921115, guid: 742d4ac623dbe4aeb8d0ffa4f6440039, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 1769531309, guid: 358ff53fec6554ebd9017a5fcdb542df, type: 3}
     - target: {fileID: 727867523823084390, guid: 742d4ac623dbe4aeb8d0ffa4f6440039, type: 3}
       propertyPath: swordAttack
       value: 

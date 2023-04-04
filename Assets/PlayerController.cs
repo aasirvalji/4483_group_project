@@ -2,12 +2,23 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.SceneManagement;
 
 public class PlayerController : MonoBehaviour
 {
+
+    public float BombcooldownTime = 1.5f;
+    private float BomblastTimeFired = -Mathf.Infinity;
+    public float RangecooldownTime = 0.5f;
+    private float RangelastTimeFired = -Mathf.Infinity;
+
     public ContactFilter2D movementFilter;
     SpriteRenderer spriteRenderer;
     public SwordAttack swordAttack;
+    [SerializeField]
+    private GameObject fireball;
+    [SerializeField]
+    private GameObject bomb;
     Vector2 movementInput;
     List<RaycastHit2D> castCollisions = new List<RaycastHit2D>();
     Rigidbody2D rb;
@@ -15,7 +26,9 @@ public class PlayerController : MonoBehaviour
     public float collisionOffset = 0.045f;
     Animator animator;
     public float movementSpeed = 0.9f;
-
+    [SerializeField]
+    private int attackMode = 0;
+    private Vector2 dir;
     void Start()
     {
         spriteRenderer = GetComponent<SpriteRenderer>();
@@ -50,8 +63,23 @@ public class PlayerController : MonoBehaviour
             }
             else if (movementInput.x > 0)
             {
-                spriteRenderer.flipX = false;
+                spriteRenderer.flipX = false  ;
             }
+        }
+    }  
+    void OnSelectMelee(){
+        attackMode = 0;
+    }
+    void OnSelectRanged(){
+        if(SceneManager.GetActiveScene().buildIndex > 2)
+        {
+        attackMode = 1;
+        }
+    }
+    void OnSelectBomb(){
+        if(SceneManager.GetActiveScene().buildIndex > 3)
+        {
+        attackMode = 2;
         }
     }
 
@@ -79,6 +107,7 @@ public class PlayerController : MonoBehaviour
     {
         if (direction != Vector2.zero)
         {
+            dir = direction;
             int count = rb.Cast(
                 direction, 
                 movementFilter,
@@ -114,7 +143,27 @@ public class PlayerController : MonoBehaviour
 
     void OnFire()
     {
-        animator.SetTrigger("swordAttack");
+        if(attackMode == 0){
+            animator.SetTrigger("swordAttack");
+        }
+        if(attackMode == 1){
+            if (Time.time - RangelastTimeFired > RangecooldownTime)
+            {
+                GameObject ammo = Instantiate(fireball,swordAttack.transform.position, Quaternion.AngleAxis(Vector2.Angle(transform.forward, dir), Vector3.forward));
+                Destroy(ammo, 3);
+                Rigidbody2D ammoRigidbody = ammo.GetComponent<Rigidbody2D>();
+                ammoRigidbody.AddForce(dir * 200f);
+                RangelastTimeFired = Time.time;
+            }
+            
+        }
+        if(attackMode == 2){
+            if (Time.time - BomblastTimeFired > BombcooldownTime)
+            {
+                Instantiate(bomb,swordAttack.transform.position, Quaternion.identity);
+                BomblastTimeFired = Time.time;
+            }
+        }
     }
 
     void OnMove(InputValue movementValue)
