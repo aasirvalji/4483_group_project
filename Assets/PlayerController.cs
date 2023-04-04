@@ -31,6 +31,7 @@ public class PlayerController : MonoBehaviour
     private Vector2 dir;
     void Start()
     {
+        Time.timeScale = 1f;
         spriteRenderer = GetComponent<SpriteRenderer>();
         animator = GetComponent<Animator>();
         rb = GetComponent<Rigidbody2D>();

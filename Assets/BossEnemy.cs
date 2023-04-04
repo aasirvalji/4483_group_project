@@ -50,7 +50,13 @@ public class BossEnemy : MonoBehaviour
             Time.timeScale = 0f;
             SceneManager.LoadScene(nextScene, LoadSceneMode.Additive);
 
-        } 
+        } else {
+            return;
+        }
+    }
+    public void CleanScene()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 }
 
