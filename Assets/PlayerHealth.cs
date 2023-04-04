@@ -42,7 +42,7 @@ public class PlayerHealth : MonoBehaviour
             } else
             {
                 long diff = currentTime - damageStart;
-                if (diff <= 1500) TakeDamage(4);
+                if (diff <= 1500) TakeDamage(3);
                 damageStart = 0;
             }
         }
