@@ -10,9 +10,9 @@ This ReadMe entails the game's features, how to install the game, how to execute
 
 Source code: https://github.com/aasirvalji/4483_group_project
 
-NOTE: We noticed that for some our our team members, the build had some issues that were not apparent in the unity dev environment. If you are having trouble viewing or playing the game, we have added a video demo that you can check out using one of the following links:
-https://youtu.be/NYdf_MjU7a0
+NOTE: We noticed that for some our our team members, the build had some issues that were not apparent in the unity dev environment. If you are having trouble viewing or playing the game, we have added a video demo that you can check out using either one of these links:
 https://drive.google.com/file/d/1lVu8JN8IdYMPnb7tWf3QnXocPuRiW1l0/view?usp=share_link
+https://youtu.be/NYdf_MjU7a0
 
 ---
 
