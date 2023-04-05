@@ -11,16 +11,5 @@ public class ButtonScript : MonoBehaviour
     public static void RestartGame(){
         SceneManager.LoadScene("Level1");
     }
-    public static void SetScore(){
-        string score = " ";
-         using (StreamReader reader = new StreamReader("Assets/score.txt"))
-            {
-                string line;
-                while ((line = reader.ReadLine()) != null)
-                {
-                    int.TryParse(line, out startTime);
-                }
-            }
-    }
 
 }
